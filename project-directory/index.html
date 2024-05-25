@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Estoque</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gestão de Estoque</h1>
+            <button id="logoutButton" class="logout-button" onclick="logout()">
+                <img src="power_icon.png" alt="Sair">
+            </button>
+        </div>
+        <form id="addItemForm" class="add-form">
+            <input type="text" id="itemName" placeholder="Nome do Item" required>
+            <input type="number" id="itemQuantity" placeholder="Quantidade" required>
+            <input type="date" id="itemExpiryDate" required>
+            <button type="submit">Adicionar Item</button>
+        </form>
+        <input type="text" id="searchBox" placeholder="Buscar Item" oninput="searchItem()">
+        <ul id="stockList"></ul>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Item</h2>
+            <form id="editItemForm">
+                <input type="hidden" id="editItemId">
+                <input type="text" id="editItemName" required>
+                <input type="number" id="editItemQuantity" required>
+                <input type="date" id="editItemExpiryDate" required>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
